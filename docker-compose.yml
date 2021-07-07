@@ -1,0 +1,15 @@
+version: '3.4'
+
+services: 
+    app-database:
+        image: mongo
+        restart: always
+        volumes: 
+            - ./app-database/db:/data/db
+        environment: 
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: example
+            MONGO_INITDB_DATABASE: app_database
+        ports: 
+            - 27017:27017
+        
